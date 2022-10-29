@@ -20,6 +20,8 @@ let autoModel;
 let autoPrice;
 let autoOwner;
 let personAutoOwner;
+const array = [];
+let ask;
 
 const Person = function(name, age) {
     this.name = name;
@@ -75,24 +77,38 @@ function addAutoOwner() {
 function whoOwner() {
     if (autoOwner === personName) {
         personAutoOwner = new Auto(autoBrand, autoModel, autoPrice, autoOwner);
+        array.push(personAutoOwner)
         return personAutoOwner;
     } else {
         return console.log(`This person ${personName} don't have any auto's`);
     }
 };
-
-addPersonName();
-addPersonAge();
-addAutoBrand();
-addAutoModel();
-addAutoPrice();
-addAutoOwner();
-whoOwner();
-
-const person = new Person(personName, personAge);
-console.log(person);
-person.showPersonInfo();
-if (personAutoOwner) {
-    personAutoOwner.showDataAuto();
-    console.log(personAutoOwner);
+function askOneMorePerson() {
+    ask = confirm('Would you like to add one more person and auto?', '');
+    return ask;
 };
+function showInfoPerson() {
+    let person = new Person(personName, personAge);
+    console.log(person);
+    person.showPersonInfo();
+};
+function createOwnerOfAuto() {
+    do {
+        addPersonName();
+        addPersonAge();
+        addAutoBrand();
+        addAutoModel();
+        addAutoPrice();
+        addAutoOwner();
+        whoOwner();
+        showInfoPerson()
+        if (personAutoOwner) {
+            personAutoOwner.showDataAuto();
+            console.log(personAutoOwner);
+        };
+        askOneMorePerson();
+    } while (ask);
+};
+
+createOwnerOfAuto();
+console.log(array);
