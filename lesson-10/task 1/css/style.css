@@ -1,0 +1,6 @@
+#body {
+    display: flex;
+}
+.bg-gold {
+    background-color: gold;
+}
