@@ -20,5 +20,8 @@ function getSite() {
     return site;
 }
 function goToSite() {
+    if (site == undefined) {
+        site = 'https://learn.javascript.ru/';
+    }
     secondBtn.onclick(document.location = site);
 }
