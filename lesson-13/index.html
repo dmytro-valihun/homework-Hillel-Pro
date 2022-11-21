@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Lesson 11</title>
+</head>
+<body>
+    
+    <div class="container">
+        <div class="category"></div>
+        <div class="products"></div>
+        <div class="details"></div>
+    </div>
+    <div class="result"></div>
+
+    <form name="someForm" action="" method="" class="form">
+        <p><label>Enter the name <input name="name" type="text"><span></span></label></p>
+        <p><label>Enter the fathers name <input name="fatherName" type="text"><span></span></label></p>
+        <p><label>Enter the surname <input name="surname" type="text"><span></span></label></p>
+        <p>Choose your city:
+            <select name="city" id="">
+                <option value="Kyiv">Kyiv</option>
+                <option value="Odessa">Odessa</option>
+                <option value="Lviv">Lviv</option>
+            </select>
+            <span></span>
+        </p>
+        <p>Choose your departament 'Nowa pochta':
+            <select name="warehouse" id="">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select>
+            <span></span>
+        </p>
+        <p>How do you want to pay?<br>
+            <label><input type="radio" name="payMetod" checked value="card">by card</label>
+            <label><input type="radio" name="payMetod" value="on_delivery">upon receipt of the goods</label>
+            <span></span>
+        </p>
+        <p>How mach product do you want to buy?<br>
+            <input type="number" name="quantity" min="1" value="1"><span></span>
+        </p>
+        <p>You can leave the comment: <br>
+            <textarea name="comment" id="" cols="30" rows="5" placeholder="your comment"></textarea>
+            <span></span>
+        </p>
+        <input type="button" value="buy it" class="gobtn"/>
+    </form>
+
+    <div class="order-info">
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <input type="button" value="Buy one more item" class="buy_more">
+    </div>
+
+    <div class="warning"></div>
+
+    <input type="button" value="My orders" class="my_orders">
+    <input type="button" value="Back to items" class="back">
+
+    <div class="shopping_cart"></div>
+
+    <script src="./js/data.js"></script>
+    <script src="./js/app.js"></script>
+    <script src="./js/form.js"></script>
+    <script src="./js/orders.js"></script>
+    
+</body>
+</html>
