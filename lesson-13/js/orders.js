@@ -14,16 +14,14 @@ function showOrderInfo() {
     orderInfo.hidden = true;
     orderForm.hidden = true;
     const itemsInShoppingCart = document.querySelector('.shopping_cart');
-    const shoppingCart = localStorage.getItem('buyProducts'); // принимаем купленный продукт
-    const finalArr = JSON.parse(shoppingCart);
-    if (buyItems.length == 0) {
+    if (buyItems.length === 0) {
         const divWithItem = document.querySelector('.warning');
         divWithItem.textContent = 'You didn\'t buy anything';
     } else {
         itemsInShoppingCart.innerHTML = '';
         let item;
-        for (let i = 0; i < finalArr.length; i++) {
-            item = finalArr[i];
+        for (let i = 0; i < buyItems.length; i++) {
+            item = buyItems[i];
             const divWithItem = document.createElement('div');
             const closeBtn = document.createElement('button');
             closeBtn.textContent = 'delete order';

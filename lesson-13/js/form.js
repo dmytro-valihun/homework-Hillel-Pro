@@ -1,17 +1,18 @@
 const buyItems = JSON.parse(localStorage.getItem('buyProducts')) || [];
 
 document.querySelector('.gobtn').addEventListener('click', function() {
-    const userName = document.forms.someForm.elements.name.value;
-    const checkUser = validUserData(userName, document.forms.someForm.elements[0]);
-    const userFatherName = document.forms.someForm.elements.fatherName.value;
-    const checkFatherName = validUserData(userFatherName, document.forms.someForm.elements[1]);
-    const userSurname = document.forms.someForm.elements.surname.value;
-    const checkSurname = validUserData(userSurname, document.forms.someForm.elements[2]);
+    const myElements = document.forms.someForm.elements;
+    const userName = myElements.name.value;
+    const checkUser = validUserData(userName, myElements[0]);
+    const userFatherName = myElements.fatherName.value;
+    const checkFatherName = validUserData(userFatherName, myElements[1]);
+    const userSurname = myElements.surname.value;
+    const checkSurname = validUserData(userSurname, myElements[2]);
     
     const userCity = document.querySelector('select[name=city]').value;
-    const checkUserCity = validUserCityAndWarehouse(userCity, document.forms.someForm.elements[3]);
+    const checkUserCity = validUserCityAndWarehouse(userCity, myElements[3]);
     const userWarehouse = document.querySelector('select[name=warehouse]').value;
-    const checkUserWarehouse = validUserCityAndWarehouse(userWarehouse, document.forms.someForm.elements[4]);
+    const checkUserWarehouse = validUserCityAndWarehouse(userWarehouse, myElements[4]);
 
     const payMethod = document.querySelectorAll('input[type=radio]');//массив с кнопками
     let finalPayMethod = validPayMethod(payMethod);// знач кнопки (card)
@@ -31,14 +32,23 @@ document.querySelector('.gobtn').addEventListener('click', function() {
         orderForm.hidden = true;
         const orderInfo = document.querySelector('.order-info');
         orderInfo.hidden = false;
-        orderInfo.children[0].textContent = `Name ${userName}`;
-        orderInfo.children[1].textContent = `Father name: ${userFatherName}`;
-        orderInfo.children[2].textContent = `Surname: ${userSurname}`;
-        orderInfo.children[3].textContent = `Target city: ${userCity}`;
-        orderInfo.children[4].textContent = `Warehouse of Nowa Poczta: ${userWarehouse}`;
-        orderInfo.children[5].textContent = `You pay: ${payMethodForUserInfo}`;
-        orderInfo.children[6].textContent = `You buy: ${quantityOfItems} item`;
-        orderInfo.children[7].textContent = `Your comment is: ${userName}`;
+        const deliveryList = orderInfo.children[0];
+        deliveryList.textContent = '';
+        const deliveryInfo = {
+            'Name' : userName, 
+            'Father name': userFatherName, 
+            'Surname': userSurname, 
+            'Target city': userCity,
+            'Warehouse of Nowa Poczta': userWarehouse,
+            'You pay': payMethodForUserInfo,
+            'You buy': quantityOfItems,
+            'Your comment is': userComment,
+        };
+        for(let key in deliveryInfo) {
+            const elemOl = document.createElement('li');
+            elemOl.textContent = `${key}: ${deliveryInfo[key]}`;
+            deliveryList.appendChild(elemOl)
+        };
         const buyOneMore = document.querySelector('.buy_more');
         buyOneMore.addEventListener('click', buyMore);
     }
@@ -49,7 +59,7 @@ function buyMore() {
 };
 
 function validUserData(name, paragraf) {
-    if (isFinite(name) || name == '') {
+    if (isFinite(name) || name === '') {
         paragraf.nextElementSibling.textContent = 'Enter the correct data';
         return false;
     } else {
@@ -59,7 +69,7 @@ function validUserData(name, paragraf) {
 };
 
 function validUserCityAndWarehouse(value, paragraf) {
-    if (value == '') {
+    if (value === '') {
         paragraf.nextElementSibling.textContent = 'Enter the correct data';
         return false;
     } else {
@@ -79,7 +89,7 @@ function validQuantity(num) {
 };
 
 function validUserComment(sring) {
-    if (sring == '') {
+    if (sring === '') {
         document.forms.someForm.elements[8].nextElementSibling.textContent = 'comment please!';
         return false;
     } else {
@@ -99,14 +109,14 @@ function validPayMethod(payMethod) {
 function findValuePayMethod(finalPayMethod) {
     const objPayMethod = {card: 'by card', on_delivery: 'upon receipt of the goods'};
     for (let key in objPayMethod) {
-        if (key == finalPayMethod) {
+        if (key === finalPayMethod) {
             return (objPayMethod[key])
         } 
     }
 };
 
 function checkPayMethod(method) {
-    if (method == undefined) {
+    if (method === undefined) {
         document.forms.someForm.children[5].children[3].textContent = 'Choise the payment method!';
         method = false;
     } else {
