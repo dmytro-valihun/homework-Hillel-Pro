@@ -7,6 +7,8 @@ const newUserBtnMain = document.querySelector('.add-user');
 const newUserBtnCancel = document.querySelector('.btn-cancel');
 newUserBtnMain.addEventListener('click', addUser);
 newUserBtnCancel.addEventListener('click', closeRegister);
+const popup = document.querySelector('.popup');
+popup.hidden = true;
 
 function showUsers() {
     for (let i = 0; i < usersDate.length; i++) {
@@ -37,7 +39,7 @@ function showUsers() {
 };
 showUsers();
 
-function addNewUser() {
+function addNewUserWithValidation() {
     const userName = form.elements[0];
     const userPassword = form.elements[1];
     const userAge = form.elements[2];
@@ -87,7 +89,7 @@ function addUser() {
     createElementConstructor('button',
     {'data-add': 'add'}, 
     'Add', 
-    addNewUser, 
+    addNewUserWithValidation, 
     windowRegNewUser,
     );
 };

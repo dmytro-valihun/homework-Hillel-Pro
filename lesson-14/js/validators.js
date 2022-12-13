@@ -52,7 +52,7 @@ function validUserMail(mail) {
     }
 };
 function validUserPhone(phone) {
-    const pattern = /^\+\d{11}$/;
+    const pattern = /^\+\d{11,12}$/;
     const result = pattern.test(phone);
     let warning = form.children[4].lastChild;
     warning.textContent = '';

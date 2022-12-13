@@ -1,3 +1,9 @@
+const btnDeleteYes = document.querySelector('.btn-yes');
+const btnDeleteNo = document.querySelector('.btn-no');
+btnDeleteNo.addEventListener('click', cancelRemoveUser);
+btnDeleteYes.addEventListener('click', removeUserFromStorage);
+let numAttForDeleteUser;
+
 function viewInfo(event) {
     const numAtt = event.target.getAttribute('data-view');
     const usersDiv = document.querySelector(`div[data-user='${numAtt}']`);
@@ -23,13 +29,28 @@ function viewInfo(event) {
 };
 
 function removeUser(event) {
-    const numAtt = event.target.getAttribute('data-remove');
-    const usersDiv = document.querySelector(`div[data-user='${numAtt}']`);
-    if (confirm('Do you want to delete?')) {
-        usersDiv.remove();
-        usersDate.splice(numAtt, 1);
-        localStorage.setItem('user', JSON.stringify(usersDate));
-    }
+    windowRegNewUser.hidden = true;
+    newUserBtnMain.hidden = true;
+    wrapDivList.hidden = true;
+    numAttForDeleteUser = event.target.getAttribute('data-remove');
+    popup.hidden = false;
+};
+
+function removeUserFromStorage() {
+    popup.hidden = true;
+    newUserBtnMain.hidden = false;
+    wrapDivList.hidden = false;
+    const usersDiv = document.querySelector(`div[data-user='${numAttForDeleteUser}']`);
+    usersDiv.remove();
+    usersDate.splice(numAttForDeleteUser, 1);
+    localStorage.setItem('user', JSON.stringify(usersDate));
+};
+
+function cancelRemoveUser() {
+    popup.hidden = true;
+    windowRegNewUser.hidden = true;
+    newUserBtnMain.hidden = false;
+    wrapDivList.hidden = false;
 };
 
 function editUser(event) {

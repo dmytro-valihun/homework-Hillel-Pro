@@ -1,0 +1,31 @@
+.popup {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: darkslateblue;
+}
+.popup-inside {
+    background-color: burlywood;
+    border-radius: 10px;
+    width: 200px;
+    margin: calc(50vh - 80px) auto;
+    padding: 20px;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.popup .btn {
+    border-radius: 5px;
+    border: none;
+    padding: 5px 20px;
+    cursor: pointer;
+}
+.btn-yes {
+    background-color: green;
+}
+.btn-no {
+    background-color: red;
+}
