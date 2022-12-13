@@ -1,0 +1,14 @@
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.arr{
+    transform: rotate(180deg);
+}
+.img{
+    width: 100px;
+}
+.main-image {
+    width: 500px;
+}
