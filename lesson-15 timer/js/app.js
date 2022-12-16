@@ -1,3 +1,4 @@
+let oldTime = [];
 function showCurrentTime() {
     const date = new Date;
     const hour = date.getHours();
@@ -18,8 +19,11 @@ function showCurrentTime() {
     })
     const nums = document.querySelectorAll('.time');
     for (let i = 0; i < nums.length; i++) {
-        nums[i].children[0].src = `./img/${result[i]}.jpg`;
+        if (result[i] !== oldTime[i]) {
+            nums[i].children[0].src = `./img/${result[i]}.jpg`;
+        }
     }
+    oldTime = Object.assign([], result);
 };
 showCurrentTime();
 setInterval(showCurrentTime, 1000);
