@@ -1,0 +1,55 @@
+* {
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+body {
+    background-color: rgb(158, 145, 145);
+}
+.container {
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+.btns > button {
+    border: none;
+    border-radius: 30px;
+    background-color: rgb(41, 41, 166);
+    color: aliceblue;
+    padding: 20px 50px;
+    font-size: 20px;
+}
+.btns {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+.content {
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    padding-top: 30px;
+}
+.list {
+    margin: 0 50px;
+}
+.list > div, .info > div {
+    margin: 5px;
+    font-size: 20px;
+    font-weight: bold;
+}
+.list > div:hover {
+    cursor: pointer;
+}
+.info {
+    background-color: rgb(76, 138, 253);
+    border-radius: 10px;
+}
+.showMore {
+    border: none;
+    border-radius: 10px;
+    background-color: green;
+    color: aliceblue;
+    padding: 8px 20px;
+    font-size: 16px;
+}
