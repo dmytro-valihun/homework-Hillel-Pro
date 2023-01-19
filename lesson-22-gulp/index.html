@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Telegram Web</title>
+    <link type="Image/x-icon" href="./build/img/favicon.ico" rel="shortcut icon">
+    <link rel="stylesheet" href="build/style.css">
+</head>
+<body class="body">
+
+    <div class="container">
+
+        <!-- login -->
+        <div class="login">
+            <img src="./build/img/tegram-logo.svg.png" width="100px" height="100px" alt="" class="login__img">
+            <h1>Telegram</h1>
+            <form action="#" method="get" class="login__form">
+                <div>Enter your phone
+                    <p><input type="text" size="30" name="login" class="login__input-login input"></p>
+                </div>
+                <div>Enter your password
+                    <p><input type="password" size="30" name="pass" class="login__input-pass input"></p>
+                    <div class="login__wrong-message wrong-message">
+                        <p>Your phone number or password is wrong. Please try again.</p>
+                        <p>Forgot your password? Click <button type="button" class="login__btn-forgote-message">here</button></p>
+                    </div>
+                </div>
+                <button type="button" class="login__btn btn">login</button>
+            </form>
+        </div>
+
+        <form action="" class="create-new-password" name="createNewPass">
+            <button type="button" class="close-btn close-btn-cancel-new-pass">
+                <div>
+                    <div class="leftright"></div>
+                    <div class="rightleft"></div>
+                </div>
+            </button>
+            <div>Enter your name and surname
+                <p><input type="text" size="30" name="userName" placeholder="Name Surname" class="input"></p>
+            </div>
+            <div>Enter new password (min. 8 signs)
+                <p><input type="password" name="userNewPass" size="30" class="input"></p>
+            </div>
+            <div class="create-new-password__wrap-wrong-div">Repeate new password
+                <p><input type="password" name="repeatUserNewPass" size="30" class="input"></p>
+                <div class="create-new-password__wrong-message wrong-message">
+                    Wrong name or passwords don't match. Please try again.
+                </div>
+            </div>
+            <button type="button" class="btn create-new-password__btn">change password</button>
+        </form>
+
+        <div class="popup-pass-changed">
+            <p>Password has been changed!</p>
+            <button type="button" class="btn popup-pass-changed__ok">ok</button>
+        </div>
+
+        <!-- main -->
+
+        <div class="message-window">
+
+            <div class="chat-list">
+                <div class="burger-menu">
+                    <div class="burger-menu__wrap">
+                        <div class="burger-menu__btn"></div>
+                    </div>
+                </div>
+                <ul class="chat-list__user-list">
+                    <li class="chat-list__user">
+                        <!-- <img src="" alt=""><p>User name</p> -->
+                    </li>
+                </ul>
+            </div>
+
+            <div class="message">
+                <div class="message__chatting">
+                    <div class="message__addressee">qwe  qweqwe</div>
+                    <div class="message__messeges">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus amet praesentium asperiores qui maxime provident impedit ad distinctio officiis laborum? Nihil nobis quas fuga repudiandae, odit hic expedita odio ex voluptatum fugit, totam provident sequi? Error suscipit est sunt, similique minus porro minima obcaecati maxime facere natus at explicabo autem quam sapiente. Quasi corrupti porro, quis id laboriosam accusantium expedita perferendis, aliquid in itaque fugit velit reprehenderit a dolor hic sapiente, labore doloremque ipsam praesentium qui voluptatibus error necessitatibus. Illo totam quo neque officiis eos. Voluptas hic beatae neque! Expedita ipsam pariatur mollitia excepturi nulla cumque animi ratione quaerat alias?</div>
+                    <form action="" method="" class="message__send-message">
+                        <button type="button" class="btn">attach</button>
+                        <textarea name="message-text" id="" class="message__text"></textarea>
+                        <button type="button" class="btn">smiles</button>
+                        <button type="button" class="btn">send</button>
+                    </form>
+                </div>
+            </div>
+            
+        </div>
+
+        <!--    P O P   U Ps-->
+
+        <div class="user-info">
+            <button type="button" class="close-btn-user-info close-btn">
+                <div>
+                    <div class="leftright"></div>
+                    <div class="rightleft"></div>
+                </div>
+            </button>
+            <div class="user-info__wrap">
+                <h2 class="user-info__name">bla bla</h2>
+                <p class="user-info__tel">1231239009900</p>
+            </div>
+            <button type="button" class="user-info__btn btn">exit</button>
+        </div>
+
+        <div class="exit-popup-wrap">
+            <div class="exit-popup">
+                <h2>Telegram</h2>
+                <p>Are you sure want to terminate this session?</p>
+                <div class="exit-btn">
+                    <button type="button" class="exit-btn__yes exit-btn__yes--green btn">yes</button>
+                    <button type="button" class="exit-btn__no exit-btn__yes--red btn">no</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- <script src="./js/data.js"></script>
+    <script src="./js/app.js"></script> -->
+    <!-- <script src="./src/js/data.js"></script>
+    <script src="./src/js/app.js"></script> -->
+    <script src="./build/a95fe80ac6f0e6733343.js"></script>
+</body>
+</html>
