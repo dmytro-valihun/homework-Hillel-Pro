@@ -1,0 +1,23 @@
+.App {
+    padding: 30px 0;
+    .btns-wrap {
+        display: flex;
+        justify-content: center;
+        gap: 50px;
+    }
+    .btn {
+        padding: 10px 25px;
+        background-color: rgb(145, 145, 214);
+        border-radius: 10px;
+        border: none;
+        font-size: 22px;
+        font-weight: 700;
+        cursor: pointer;
+        &:hover {
+            background-color: rgb(114, 114, 232);
+        }
+        &:active {
+            background-color: rgb(63, 63, 141);
+        }
+    }
+}
