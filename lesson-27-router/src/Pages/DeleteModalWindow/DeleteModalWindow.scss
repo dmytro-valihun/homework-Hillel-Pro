@@ -1,0 +1,44 @@
+#DeleteModalWindow {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: rgba(64, 91, 115, 0.8);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .wrap {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: #b38585;
+        padding: 20px;
+        width: 400px;
+        border: 10px solid rgb(57, 51, 168);
+        border-radius: 20px;
+    }
+    .wrap_btn {
+        display: flex;
+        gap: 30px;
+        padding-top: 30px;
+        button {
+            padding: 10px 40px;
+            &:first-child {
+                background: red;
+            }
+            &:last-child {
+                background: green;
+            }
+            &:hover {
+                background-color: #2c2626;
+                color: aqua;
+            }
+            &:active {
+                background-color: #2977d6;
+            }
+        }
+    }
+}

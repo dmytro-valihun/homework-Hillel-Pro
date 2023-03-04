@@ -1,0 +1,29 @@
+.ContactList {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 25px;
+    font-weight: bold;
+    padding: 50px;
+    > div {
+        align-items: center;
+        padding-left: 30px;
+        display: flex;
+        gap: 50px;
+        border: 1px solid green;
+        > div {
+            width: 25%;
+        }
+    }
+    .wrapper {
+        background: #227578;
+        font-size: 30px;
+        font-style: italic;
+        color: aqua;
+        padding: 20px;
+        > div {
+            text-align: center;
+        }
+    }
+}

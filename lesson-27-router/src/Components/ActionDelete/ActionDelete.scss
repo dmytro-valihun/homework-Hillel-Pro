@@ -1,0 +1,12 @@
+.ActionDelete {
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    button {
+        margin: 5px;
+    }
+    .btn-delete {
+        padding: 5px 20px;
+        font-size: 16px;
+    }
+}

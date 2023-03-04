@@ -1,0 +1,33 @@
+.CreateNewContact {
+    display: flex;
+    justify-content: center;
+    padding: 50px 0;
+    form {
+        padding: 30px;
+        border: 1px solid gray;
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-height: 500px;
+        input {
+            border-style:solid;
+        }
+        * {
+            margin-top: 20px;
+            font-size: 25px;
+            padding: 10px;
+            border-radius: 10px;
+        }
+        div {
+            display: flex;
+            gap: 60px;
+        }
+    }
+    .btn-save {
+        background: green;
+    }
+    .btn-cancel {
+        background: red;
+    }
+}
