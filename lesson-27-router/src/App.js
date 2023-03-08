@@ -1,9 +1,9 @@
 import './App.scss';
 import { useEffect, useState } from 'react';
 import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
-import { ContactList } from './Pages/ContactList/ContactList';
-import { CreateNewContact } from './Pages/CreateNewContact/CreateNewContact';
-import { ErrorPage } from './Pages/ErrorPage/ErrorPage';
+import { ContactList } from './pages/ContactList/ContactList';
+import { CreateNewContact } from './pages/CreateNewContact/CreateNewContact';
+import { ErrorPage } from './pages/ErrorPage/ErrorPage';
 
 function  App() {
   const [usersArr, setUsersArr] = useState([]);
@@ -21,11 +21,9 @@ function  App() {
     let newUsersArray = usersArr.filter(item => item.id !== userCurrentId);
     setUsersArr(newUsersArray);
     setUserCurrentId('');
-    console.log(usersArr)
   }
 
   const saveContact = (newContact) => {
-    console.log(newContact)
     if (newContact.id === userCurrentId) {
       const index = usersArr.findIndex(item => item.id === newContact.id);
       (usersArr.splice(index, 1, newContact));
@@ -70,7 +68,7 @@ function  App() {
               setEditUserStatus={setEditUserStatus} 
             />} 
           />
-          <Route path='/create-new-contact' element={
+          <Route path='/create-new-contact/' element={
             <CreateNewContact 
               users={usersArr} 
               userCurrentId={userCurrentId} 

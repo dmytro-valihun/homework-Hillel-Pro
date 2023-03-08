@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import './ActionEdit.scss';
 
-export function ActionEdit({id, setUserCurrentId, setEditUserStatus, userCurrentId}) {
+export function ActionEdit({id, setUserCurrentId, setEditUserStatus}) {
     const handleClick = () => {
         setUserCurrentId(id);
         setEditUserStatus(true);        
